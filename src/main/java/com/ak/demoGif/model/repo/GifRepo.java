@@ -18,6 +18,10 @@ public class GifRepo {
             new Gif("infinite-andrew.gif", "andrew", true)
     );
 
+    public List<Gif> getAllGifs() {
+        return ALL_GIFS;
+    }
+
     public String showNames(){
 
         String name = "";
@@ -28,6 +32,8 @@ public class GifRepo {
 
         return name;
     }
+
+
 
 
 }

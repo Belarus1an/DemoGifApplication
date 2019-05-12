@@ -11,11 +11,15 @@ public class CategoryRepo {
 
     private static final List<Category> ALL_CATEGORIES = Arrays.asList(
             new Category(0, "funny"),
-            new Category(0, "sport"),
-            new Category(0, "it")
+            new Category(1, "sport"),
+            new Category(2, "it")
     );
 
     public List<Category> getAllCategories() {
         return ALL_CATEGORIES;
+    }
+
+    public Category getCategoriesById(int id){
+        return ALL_CATEGORIES.get(id);
     }
 }

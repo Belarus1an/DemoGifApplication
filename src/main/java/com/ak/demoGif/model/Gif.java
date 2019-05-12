@@ -2,11 +2,13 @@ package com.ak.demoGif.model;
 
 public class Gif {
 
+    private int categoriesId;
     private String name;
     private String userName;
     private Boolean favorite;
 
-    public Gif(String name, String userName, Boolean favorite) {
+    public Gif(int categoriesId, String name, String userName, Boolean favorite) {
+        this.categoriesId = categoriesId;
         this.name = name;
         this.userName = userName;
         this.favorite = favorite;
@@ -34,5 +36,9 @@ public class Gif {
 
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
+    }
+
+    public int getCategoriesId() {
+        return categoriesId;
     }
 }

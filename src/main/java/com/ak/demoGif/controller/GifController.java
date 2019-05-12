@@ -4,11 +4,10 @@ import com.ak.demoGif.model.Gif;
 import com.ak.demoGif.model.repo.GifRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,7 +23,6 @@ public class GifController {
         List<Gif> gifList = gifRepo.getAllGifs();
 
         modelMap.put("gifs", gifList);
-
 
         return "home";
     }
@@ -47,5 +45,20 @@ public class GifController {
 
         modelMap.put("gif", gif);
         return "gif-details";
+    }
+
+    @RequestMapping("filter")
+    public String filter(@RequestParam String name, ModelMap modelMap){
+
+        Gif gif = gifRepo.getGifByName(name);
+
+        if (gif == null){
+            return "error";
+        } else {
+            modelMap.put("gif", gif);
+            return "gif-details";
+        }
+
+
     }
 }

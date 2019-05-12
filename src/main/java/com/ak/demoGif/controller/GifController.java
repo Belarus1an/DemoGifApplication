@@ -31,6 +31,7 @@ public class GifController {
 
         modelMap.put("gifs", gifList);
 
+
         return "home";
     }
 

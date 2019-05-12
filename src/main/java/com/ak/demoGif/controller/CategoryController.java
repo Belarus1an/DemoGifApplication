@@ -34,7 +34,7 @@ public class CategoryController {
     @RequestMapping("/category/{id}")
     public String gifsCategory(@PathVariable int id, ModelMap modelMap){
 
-        List<Gif> gifList = gifRepo.gitGifByCategory(id);
+        List<Gif> gifList = gifRepo.getGifByCategory(id);
 
         Category category = categoryRepo.getCategoriesById(id);
 

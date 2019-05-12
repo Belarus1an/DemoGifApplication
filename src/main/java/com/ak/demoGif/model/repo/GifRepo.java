@@ -46,7 +46,7 @@ public class GifRepo {
         return name;
     }
 
-    public List<Gif> gitGifByCategory(int id){
+    public List<Gif> getGifByCategory(int id){
 
         List<Gif> gifList = new ArrayList<>();
 
@@ -56,6 +56,16 @@ public class GifRepo {
             }
         }
         return gifList;
+    }
+
+    public Gif getGifByName(String name) {
+
+        for (Gif value: ALL_GIFS){
+            if (name.equals(value.getName())){
+                return value;
+            }
+        }
+        return null;
     }
 
 

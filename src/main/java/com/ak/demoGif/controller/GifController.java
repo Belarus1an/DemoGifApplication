@@ -18,13 +18,6 @@ public class GifController {
     @Autowired
      private GifRepo gifRepo;
 
-    @RequestMapping("/showGifsInBrowser")
-    @ResponseBody
-    public String showGifsInBrowser(){
-
-        return gifRepo.showNames();
-    }
-
     @RequestMapping("/")
     public String listGifs(ModelMap modelMap){
 

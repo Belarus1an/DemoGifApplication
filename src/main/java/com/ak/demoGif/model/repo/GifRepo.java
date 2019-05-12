@@ -35,17 +35,6 @@ public class GifRepo {
         return gifList;
     }
 
-    public String showNames(){
-
-        String name = "";
-
-        for (int i = 0; i < ALL_GIFS.size(); i++) {
-            name += ALL_GIFS.get(i).getName() + " ";
-        }
-
-        return name;
-    }
-
     public List<Gif> getGifByCategory(int id){
 
         List<Gif> gifList = new ArrayList<>();
